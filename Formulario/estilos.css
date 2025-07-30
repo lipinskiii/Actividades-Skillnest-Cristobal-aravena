@@ -43,4 +43,7 @@ label[for="otro"] {
     margin-right: 10px;
 }       
 /* este codigo de estilo lo hice para que los radios se alineen en una sola fila */
-
+.titulogenero {
+    font-weight: bold;
+    margin-top: 20px;
+}
