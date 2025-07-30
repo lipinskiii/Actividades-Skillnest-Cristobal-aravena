@@ -41,6 +41,6 @@ label[for="femenino"],
 label[for="otro"] {
     display: inline-block;
     margin-right: 10px;
-}
-
+}       
 /* este codigo de estilo lo hice para que los radios se alineen en una sola fila */
+
