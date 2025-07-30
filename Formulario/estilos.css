@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.fondotitulo {
+    background-color: black;
+}
+h1 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    border: #333 solid 1px;
+    padding: 10px;
+
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+input[type="radio"],
+label[for="masculino"],
+label[for="femenino"],
+label[for="otro"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* este codigo de estilo lo hice para que los radios se alineen en una sola fila */
