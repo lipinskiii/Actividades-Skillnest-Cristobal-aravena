@@ -83,3 +83,6 @@ figure {
     padding: 20px;
     align-items: center;     /* Centra verticalmente si es necesario */
 }
+.TEXTO {
+    text-size-adjust: 30px;;
+}
