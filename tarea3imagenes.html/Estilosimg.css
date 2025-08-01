@@ -73,3 +73,13 @@ figure {
     padding-left: 50px;/* Permite que esta figura ocupe el espacio restante */
     margin-right: -100px;
 }
+.container4 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */;
+    background-color: greenyellow;
+    margin: auto;
+    width: 900px;
+    height: 80px;
+    padding: 20px;
+    align-items: center;     /* Centra verticalmente si es necesario */
+}
