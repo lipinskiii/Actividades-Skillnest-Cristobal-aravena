@@ -2,9 +2,74 @@ h1 {
     text-align: center;
     color: #333;
 }
-.container {
-    width: 950px;
-    height: 300px;
+.container1 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente si es necesario */
+     gap: 20px;               /* Espacio entre figuras */
+    padding: 20px;
     background-color: yellow;
-    margin: 0 auto;
+    width: 900px;
+    height: 200px;
+    margin: auto;
+}
+
+figure {
+    margin: 0;
+}
+
+.container1 img {
+    width: 200px;  /* Ajusta el tamaño como necesites */
+    height: auto;
+    border-radius: 10px; /* opcional: esquinas redondeadas */
+}
+.container2 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente si es necesario */
+    gap: 20px;               /* Espacio entre figuras */
+    padding: 20px;
+    background-color: rgb(21, 178, 240);
+    width: 900px;
+    height: 200px;
+    margin: auto;
+}
+.container2 img {
+    width: 300px;  /* Ajusta el tamaño como necesites */
+    height: 200px;
+    border-radius: 10px; /* opcional: esquinas redondeadas */
+    padding: 100px;
+
+}
+.container3 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente si es necesario */
+    gap: 20px;               /* Espacio entre figuras */
+    padding: 20px;
+    background-color: rgb(240, 21, 21);
+    width: 900px;
+    height: 200px;
+    margin: auto;
+}
+.last1 {
+    width: 200px;  /* Ajusta el tamaño como necesites */
+    height: auto;
+    
+    padding: 0;
+    margin-left: -100px; 
+    margin-right: 30px;;
+}
+.last2 {
+    width: 200px;  /* Ajusta el tamaño como necesites */
+    height: auto;
+    border-radius: 10px;
+    padding: 0; /* opcional: esquinas redondeadas *//* Permite que esta figura ocupe el espacio restante */
+}
+.last3 {
+    width: 300px;  /* Ajusta el tamaño como necesites */
+    height: 200px;
+    border-radius: 10px; /* opcional: esquinas redondeadas */
+    padding-left: 50px;/* Permite que esta figura ocupe el espacio restante */
+    margin-right: -100px;
 }
