@@ -1,0 +1,87 @@
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    height: 400px;
+    border-radius: 55px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+
+}
+
+.barra-azul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 164, 223);
+    flex: 1.5;
+}
+.barra-blanca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    flex: 3;
+}
+.icono-usuario {
+    position: absolute;
+    top: 40px; /* más o menos entre las barras */
+    left: 70px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+.n-u {
+    position: absolute;
+    top: 185px;
+    left: 70px;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(66, 66, 66);
+    
+    font-style: italic;
+}
+.Pais {
+    position: absolute;
+    top: 225px;
+    left: 70px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    
+    font-style: italic;
+}
+.titulos {
+    position: absolute;
+    top: 250px;
+    left: 70px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(122, 122, 122);
+    margin-bottom: 10px;
+    
+}
+.descripcion {
+    position: absolute;
+    top: 270px;
+    left: 70px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(122, 122, 122);
+    right: 50px;
+}
+
+.editar {
+    position: absolute;
+    top: 360px;
+    left: 40px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+}
