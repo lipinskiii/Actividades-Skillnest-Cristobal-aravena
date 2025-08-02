@@ -85,7 +85,56 @@
     cursor: pointer;
     font-weight: bold;
 }
-.link {
-    position: fixed;
-    bottom: 0;
+.Barra-inicio {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(56, 56, 56);
+    position: relative;  /* Agregado */
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0 40px; /* para dar espacio a los lados */
+    gap: 20px;
+
+}
+.titulo {
+    
+    top: 10px;
+    left: 40px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-style: italic;
+}
+.descripcion2 {
+    position: absolute;
+    top: 20px;
+    right: 350px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    word-spacing: 20px;
+
+}
+.no-break {
+    white-space: nowrap;
+}
+
+.boton {
+    position: absolute;
+    right: 30px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(17, 164, 223);
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 10px 20px;
 }
