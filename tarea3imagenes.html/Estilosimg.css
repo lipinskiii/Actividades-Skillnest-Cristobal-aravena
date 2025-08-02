@@ -86,3 +86,14 @@ figure {
 .TEXTO {
     text-size-adjust: 30px;;
 }
+.link {
+    position: fixed;  /* Fija el enlace en la pantalla */
+    bottom: 0;        /* Lo coloca al fondo */
+    left: 0;          /* Lo coloca a la izquierda */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #f0f0f0; /* Color de fondo opcional */
+    border-top-right-radius: 5px; /* Esquina redondeada */
+    text-decoration: none; /* Quita el subrayado */
+    color: #0066cc;   /* Color del texto */
+    font-weight: bold; /* Negrita */
+}
