@@ -17,16 +17,13 @@ function megusta(titulo) {
     
     alert(`Te gustó "${titulo}"`);
     
-    
-    const boton = event.target;
-    
+    const boton = event.currentTarget;
     
     let texto = boton.textContent;
+    
     let numeroLikes = parseInt(texto.match(/\d+/)[0]);
     
-    
     numeroLikes++;
-    
     
     boton.textContent = `${numeroLikes} me gusta`;
 }
