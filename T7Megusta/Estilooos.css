@@ -32,18 +32,75 @@ body {
 }
 .Contenedor-izq {
     flex: 1;
-    
-    margin-right: 40px;
+    display: flex;
+    margin-right: 20px;
     margin-left: 30px;
     margin-top: 40px;
-    
+    align-items: flex-start;
+    justify-content: center;
     height: 100%;  
- 
+
 }
 .Contenedor-der {
     flex: 3;
     height: 100%;
-    margin-right: 40px;
-    margin-left: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
     margin-top: 40px;
+}
+.Perfil {
+    height: 50%;
+    border: 2px solid black;
+    border-radius: 5%;
+    padding:8px;
+    margin: 10px;
+    
+}
+.Imagen {
+    position: absolute;
+    left: 345px;
+}
+
+.Nombre {
+    font-size: 20px;
+    margin-top: 180px;
+}
+.Proyectos {
+    margin: 10px;
+    height: auto;
+    border:2px solid black;
+    border-radius: 5%;
+    padding: 8px;
+}
+.Encabezado-Proyecto {
+    display: flex;          /* Activa flexbox */
+    align-items: center;    /* Centra verticalmente */
+    gap: 10px;              /* Espacio entre elementos */
+    margin: 0 0 10px 0;
+        /* Margen inferior */
+}
+.Usuario-Proyecto {
+    font-weight: bold;
+    margin-right: auto; 
+    font-size: 25px;
+    margin-left: 20px;
+}
+.Texto-Proyecto {
+    padding-top: 16px;
+    padding-bottom: 0px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.Link1 {
+    color: blue;
+    font-style: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.Boton-Like {
+    background-color: yellow;
+    border-radius: 15%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
