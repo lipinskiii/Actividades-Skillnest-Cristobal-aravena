@@ -23,5 +23,5 @@ function megusta(titulo,event) {
 
     numeroLikes++;
 
-    boton.textContent = `${numeroLikes} me gusta`;
+    boton.textContent = `${numeroLikes} Me gusta`;
 }
