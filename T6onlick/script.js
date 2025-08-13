@@ -13,17 +13,15 @@ document.querySelector('.Agregardefinicion').addEventListener('click', function(
 });
 
 
-function megusta(titulo) {
-    
+function megusta(titulo,event) {
+
     alert(`Te gustó "${titulo}"`);
-    
+
     const boton = event.currentTarget;
-    
-    let texto = boton.textContent;
-    
-    let numeroLikes = parseInt(texto.match(/\d+/)[0]);
-    
+
+    let numeroLikes = parseInt(boton.textContent) || 0;
+
     numeroLikes++;
-    
+
     boton.textContent = `${numeroLikes} me gusta`;
 }
