@@ -18,3 +18,12 @@ for(let i = 0; i < botonEliminar.length; i ++){
         
     });
 }
+document.querySelector(".boton-editar").addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    
+    // Selecciona el h1
+    let nombreUsuario = document.querySelector(".nombre-usuario");
+
+    // Cambia el texto directamente
+    nombreUsuario.textContent = "Gerardo Lopez";
+});

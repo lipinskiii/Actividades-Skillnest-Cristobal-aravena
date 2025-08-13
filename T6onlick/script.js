@@ -12,16 +12,26 @@ document.querySelector('.Agregardefinicion').addEventListener('click', function(
     this.style.display = 'none'; 
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    let likesButtons = document.querySelectorAll(".boton-megusta");
 
-function megusta(titulo,event) {
+    for(let i = 0; i < likesButtons.length; i++)  {
+        likesButtons[i].addEventListener("click", function() {
+            let numeroSpan = this.querySelector(".numero");
+            
+            let numero = parseInt(numeroSpan.textContent);
+            numero++;
+            numeroSpan.textContent = numero;
+              
+            let articulo = this.closest(".Primer-Articulo");
+            let nombreAnimal = articulo.querySelector("h2").textContent;
 
-    alert(`Te gustó "${titulo}"`);
+            alert("¡Le diste like a: " + nombreAnimal + "!");
+        });
+    }
+});
 
-    const boton = event.currentTarget;
 
-    let numeroLikes = parseInt(boton.textContent) || 0;
 
-    numeroLikes++;
+        
 
-    boton.textContent = `${numeroLikes} Me gusta`;
-}
