@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./Estilosp.css">
     <title>Pagina de perfil!</title>
+    <script src="./Javascri.js" defer></script>
+
 </head>
 <body>
     <!-- Barra de navegación superior -->
@@ -48,9 +50,10 @@
     <section class="columna-derecha">
         <div class="solicitudes">
             <div>
-                <div>
-                    <h1 class="Solicitud-de-conexion">Solicitudes de conexion (2)</h1>
-                </div>
+                <div style="display: flex;justify-content: space-between; align-items: center;">
+                    <h1 class="Solicitud-de-conexion">Solicitudes de conexion </h1>
+                    <p id="connectionRequestNumber">2</p>
+                </div> 
                 <div class="Solicitudesconecc">
                     <img src="./Imagenperfil/Contatos(1).png" alt="Contacto1" class="Imagen-solicitud-conexion">
                     <p class="texto-imagen">Samanta Medina</p>
@@ -69,8 +72,9 @@
         </div>
 
         <div class="conexiones">
-            <div>
+            <div style="display: flex;justify-content: space-between; align-items: center;">
                 <h1 class="conexionesh1">Tus conexiones</h1>
+                <p id="totalConnections">418</p>
             </div>
             <div class="Solicitudesconecc2">
                 <img src="./Imagenperfil/Contatos(3).png" alt="Conexiones" class="Imagen-solicitud-conexion">
