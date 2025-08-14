@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let numero = parseInt(numeroSpan.textContent);
             numero++;
             numeroSpan.textContent = numero;
-              
+            
             let articulo = this.closest(".Primer-Articulo");
             let nombreAnimal = articulo.querySelector("h2").textContent;
 
