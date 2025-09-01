@@ -11,14 +11,14 @@ public class Aplicacion {
         System.out.println("esPrimo(18): " + Algoritmos.esPrimo(18)); // false
 
         // Prueba stringEnReversa
-        String texto = "Hola Mundo";
+        String texto = "Prueba texto en reversa";
         System.out.println("stringEnReversa(\"" + texto + "\"): " + Algoritmos.stringEnReversa(texto));
 
         // Prueba esPalindromo
         String palindromo1 = "anitalavalatina";
         String palindromo2 = "Hola";
-        System.out.println("esPalindromo(\"" + palindromo1 + "\"): " + Algoritmos.esPalindromo(palindromo1)); // true
-        System.out.println("esPalindromo(\"" + palindromo2 + "\"): " + Algoritmos.esPalindromo(palindromo2)); // false
+        System.out.println( palindromo1 + "\"): " + Algoritmos.esPalindromo(palindromo1)); // true
+        System.out.println( palindromo2 + "\"): " + Algoritmos.esPalindromo(palindromo2)); // false
 
         // Prueba secuenciaFizzBuzz
         int numero = 15;
