@@ -21,7 +21,7 @@ public class Aplicacion {
         System.out.println("esPalindromo(\"" + palindromo2 + "\"): " + Algoritmos.esPalindromo(palindromo2)); // false
 
         // Prueba secuenciaFizzBuzz
-        int numero = 30;
+        int numero = 15;
         System.out.println("secuenciaFizzBuzz(" + numero + "):");
         System.out.println(Algoritmos.secuenciaFizzBuzz(numero));
     }
