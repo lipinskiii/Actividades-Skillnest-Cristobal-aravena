@@ -11,7 +11,7 @@ public class Aplicacion {
         TiendaElectronica tienda = new TiendaElectronica();
 
         Televisor televisor1 = new Televisor("Samsung smart tv", 450.000, 2, "4k", 24.7);
-        Televisor televisor2 = new Televisor("cotecita", 600.000, 0, "8k", 58.4);
+        Televisor televisor2 = new Televisor("Sony tv 4k", 600.000, 0, "8k", 58.4);
         Televisor televisor3 = new Televisor("LG", 120.000, 15, "1080p", 18.4);
 
         ComputadoraPortatil cPortatil1 = new ComputadoraPortatil("Razer", "16GB ram", 345, "Portatil Razer ultra", 15000.3, 5, "4k", 14.2);
@@ -35,6 +35,7 @@ public class Aplicacion {
         tienda.realizarVenta("Laptop Nvidia", 5);      // venta superior al stock
         tienda.realizarVenta("Asus Rog", 1);        // 0 cantidad disponible
         tienda.realizarVenta("Portatil Vital", 3); // Producto no existente
+        
 
     
     
