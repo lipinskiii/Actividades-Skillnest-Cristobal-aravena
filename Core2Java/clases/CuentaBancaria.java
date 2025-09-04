@@ -21,7 +21,8 @@ import java.util.Random;
     private int generadorNumeroCuenta() {
         Random random = new Random();
         return 100000 + random.nextInt(899999);
-}
+    }
+
     public Persona getTitular() {
         return titular;
     }
@@ -34,7 +35,6 @@ import java.util.Random;
         return numeroDeCuenta;
     }
 
-    
     public void setTitular(Persona titular) {
         this.titular = titular;
     }
@@ -42,6 +42,7 @@ import java.util.Random;
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
