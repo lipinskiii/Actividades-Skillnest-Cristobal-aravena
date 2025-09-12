@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
-import java.util.List;
+
+
+
+
 
 @Controller
 public class ControladoresRecetas {
@@ -33,15 +36,17 @@ public class ControladoresRecetas {
 
     @GetMapping("/recetas/{nombre}")
     public String obtenerRecetaPorNombre(@PathVariable String nombre, Model modelo) {
+        System.out.println("Solicitando receta: " + nombre);
+        
         if (recetasConIngredientes.containsKey(nombre)) {
+            System.out.println("Receta encontrada: " + nombre);
             modelo.addAttribute("nombreReceta", nombre);
             modelo.addAttribute("ingredientes", recetasConIngredientes.get(nombre));
             return "detalleReceta";
         } else {
+            System.out.println("Receta NO encontrada: " + nombre);
             modelo.addAttribute("mensajeError", "La receta no se encuentra en nuestra lista.");
             return "detalleReceta";
         }
     }
-    
 }
-
