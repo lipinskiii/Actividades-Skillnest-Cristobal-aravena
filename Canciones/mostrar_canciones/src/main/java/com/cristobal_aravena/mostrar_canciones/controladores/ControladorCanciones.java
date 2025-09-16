@@ -23,10 +23,11 @@ public class ControladorCanciones {
         model.addAttribute("canciones", canciones);
         return "canciones";
     }
-    @GetMapping("/canciones/detalle/{idCancion}")
+    @GetMapping("/canciones/detalle/")
     public String desplegarDetalleCancion(@PathVariable Long idCancion, Model model) {
         Cancion cancion = servicioCanciones.obtenerCancionPorId(idCancion);
         model.addAttribute("cancion", cancion);
         return "detalleCancion";
     }
+    
 }

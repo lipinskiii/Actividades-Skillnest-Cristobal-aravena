@@ -2,12 +2,12 @@ package com.cristobal_aravena.mostrar_canciones.modelos;
 
 import jakarta.persistence.*;
 import java.util.Date;
-
-import jakarta.persistence.Entity;
-
+import jakarta.validation.*;
 
 
-    
+
+
+
 @Entity
 @Table(name = "canciones")
 public class Cancion {
@@ -16,6 +16,7 @@ public class Cancion {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min=1, max=100)
     private String titulo;
 
     private String artista;
