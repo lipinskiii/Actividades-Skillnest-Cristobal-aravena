@@ -2,7 +2,7 @@ package com.cristobal_aravena.mostrar_canciones.modelos;
 
 import jakarta.persistence.*;
 import java.util.Date;
-import jakarta.validation.*;
+import jakarta.validation.constraints.Size;
 
 
 
@@ -16,15 +16,19 @@ public class Cancion {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min=1, max=100)
+    @Size(min=5, max=100)
     private String titulo;
 
+    @Size(min=3)
     private String artista;
 
+    @Size(min=3, max=50)
     private String album;
 
+    @Size(min=3, max=30)
     private String genero;
 
+    @Size(min=3, max=30)
     private String idioma;
 
     @Temporal(TemporalType.TIMESTAMP)
