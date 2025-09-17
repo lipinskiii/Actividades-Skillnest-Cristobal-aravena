@@ -16,10 +16,10 @@ public class Cancion {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min=5, max=100)
+    @Size(min=5, max=100, message = "El título debe tener entre 5 y 100 caracteres")
     private String titulo;
 
-    @Size(min=3)
+    @Size(min=3, max=20)
     private String artista;
 
     @Size(min=3, max=50)

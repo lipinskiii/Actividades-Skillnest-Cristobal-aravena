@@ -25,9 +25,18 @@
                             <a href="/canciones/detalle/${cancion.id}">
                                 Detalle
                             </a>
+                            
                         </td>
+                        
                     </tr>
                 </c:forEach>
+                <div>
+                    <td>
+                            <a href="/canciones/formulario/agregar">
+                                Agregar cancion
+                            </a>
+                    </td>
+                </div>
             </tbody>
         </table>
     </c:if>
@@ -35,5 +44,6 @@
     <c:if test="${empty canciones}">
         <p>No hay canciones disponibles.</p>
     </c:if>
+
 </body>
 </html>
