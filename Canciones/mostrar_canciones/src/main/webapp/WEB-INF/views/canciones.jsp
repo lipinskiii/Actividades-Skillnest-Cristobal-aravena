@@ -22,8 +22,14 @@
                         <td>${cancion.titulo}</td>
                         <td>${cancion.artista}</td>
                         <td>
-                            <a href="/canciones/detalle/${cancion.id}">
+                            <a href="/canciones/${cancion.id}">
                                 Detalle
+                            </a>
+                            <a href="/canciones/${cancion.id}">
+                                Editar
+                            </a>
+                            <a href="/canciones/eliminar/${cancion.id}">
+                                Eliminar
                             </a>
                             
                         </td>
