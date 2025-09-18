@@ -2,6 +2,7 @@ package com.cristobal_aravena.mostrar_canciones.servicios;
 
 import com.cristobal_aravena.mostrar_canciones.modelos.Cancion;
 import com.cristobal_aravena.mostrar_canciones.repositorios.RepositorioCanciones;
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -27,5 +28,8 @@ public class ServicioCanciones {
     public Cancion actualizarCancion(Cancion cancion) {
         return repositorioCanciones.save(cancion);
     }
+    public void eliminarCancion(Long id){
+            this.repositorioCanciones.deleteById(id);
+       }
 }
 
