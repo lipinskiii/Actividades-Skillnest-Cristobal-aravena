@@ -3,31 +3,24 @@ package com.cristobal_aravena.mostrar_canciones.modelos;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "canciones")
-public class Cancion {
+@Table(name = "artistas")
+public class Artista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 5, max = 100, message = "El título debe tener entre 5 y 100 caracteres")
-    private String titulo;
+    @Size(min = 2, max = 100, message = "El nombre debe tener entre 2 y 100 caracteres")
+    private String nombre;
 
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "artista_id")
-    private Artista artista;
+    @Size(min = 2, max = 100, message = "El apellido debe tener entre 2 y 100 caracteres")
+    private String apellido;
 
-    @Size(min = 3, max = 50)
-    private String album;
-
-    @Size(min = 3, max = 30)
-    private String genero;
-
-    @Size(min = 3, max = 30)
-    private String idioma;
+    @Size(min = 10, max = 1000, message = "La biografía debe tener entre 10 y 1000 caracteres")
+    private String biografia;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaCreacion;
@@ -35,8 +28,11 @@ public class Cancion {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaActualizacion;
 
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Cancion> canciones;
+
     // Constructor vacío
-    public Cancion() {
+    public Artista() {
     }
 
     @PrePersist
@@ -60,45 +56,28 @@ public class Cancion {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    
-    public Artista getArtista() {
-        return artista;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setArtista(Artista artista) {
-        this.artista = artista;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getAlbum() {
-        return album;
+    public String getBiografia() {
+        return biografia;
     }
 
-    public void setAlbum(String album) {
-        this.album = album;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getIdioma() {
-        return idioma;
-    }
-
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
     }
 
     public Date getFechaCreacion() {
@@ -115,5 +94,13 @@ public class Cancion {
 
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
+    }
+
+    public List<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(List<Cancion> canciones) {
+        this.canciones = canciones;
     }
 }

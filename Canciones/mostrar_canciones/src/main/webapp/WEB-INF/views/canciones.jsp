@@ -13,7 +13,7 @@
         <thead>
         <tr>
             <th>Título</th>
-            <th>Artista</th>
+            
             <th>Acciones</th>
         </tr>
         </thead>
@@ -21,15 +21,15 @@
         <c:forEach var="cancion" items="${canciones}">
             <tr>
                 <td>${cancion.titulo}</td>
-                <td>${cancion.artista}</td>
+                
                 <td>
-                    <!-- Detalle (GET) -->
+                    
                     <a href="/canciones/${cancion.id}">Detalle</a>
 
-                    <!-- Editar (GET que muestra el formulario de edición) -->
+                    
                     <a href="/canciones/vistas/actualizacion/${cancion.id}">Editar</a>
 
-                    <!-- Eliminar (DELETE via POST + _method) -->
+                    
                     <form action="/canciones/eliminar/${cancion.id}" method="post" style="display:inline">
                         <input type="hidden" name="_method" value="delete"/>
                         <button type="submit">Eliminar</button>
@@ -38,14 +38,23 @@
             </tr>
         </c:forEach>
 
-        <tr>
-            <td colspan="3">
-                <a href="/canciones/formulario/agregar">Agregar canción</a>
-            </td>
-        </tr>
+        
         </tbody>
     </table>
+    
 </c:if>
+        <div>
+            <tr>
+                <td >
+                    <a href="/canciones/formulario/agregar">Agregar canción</a>
+                </td>
+            </tr>
+        </div>
+        <tr>
+            <td >
+                <a href="/artistas">Ver lista de artistas</a>
+            </td>
+        </tr>
 
 <c:if test="${empty canciones}">
     <p>No hay canciones disponibles.</p>

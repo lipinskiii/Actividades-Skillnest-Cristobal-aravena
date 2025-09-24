@@ -23,11 +23,16 @@
             <form:input path="titulo" id="titulo" />
             <form:errors path="titulo" />
         </div>
-        
         <div>
-            <label for="artista">Artista (mínimo 3 caracteres):</label>
-            <form:input path="artista" id="artista" />
-            <form:errors path="artista" />
+            <label for="artistaId">Artista:</label>
+            <select name="artistaId" id="artistaId" required>
+                <option value="">-- Seleccione un artista --</option>
+                <c:forEach items="${artistas}" var="artista">
+                    <option value="${artista.id}">
+                        ${artista.nombre} ${artista.apellido}
+                    </option>
+                </c:forEach>
+            </select>
         </div>
         
         <div>
@@ -50,11 +55,9 @@
         
         <div>
             <button type="submit">Agregar Canción</button>
+            <a href="/canciones">Volver a lista de canciones</a>
         </div>
         
     </form:form>
-    
-    <br>
-    <a href="/canciones">Volver a lista de canciones</a>
 </body>
 </html>

@@ -5,18 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
+import com.cristobal_aravena.mostrar_canciones.servicios.ServicioArtistas;
 import com.cristobal_aravena.mostrar_canciones.servicios.ServicioCanciones;
 
 import java.util.Date;
 import java.util.List;
 
-
+import com.cristobal_aravena.mostrar_canciones.modelos.Artista;
 import com.cristobal_aravena.mostrar_canciones.modelos.Cancion;
 
 
@@ -25,8 +24,17 @@ import com.cristobal_aravena.mostrar_canciones.modelos.Cancion;
 public class ControladorCanciones {
 
     @Autowired
+    private ServicioArtistas servicioArtistas;
+
+    @Autowired
     private ServicioCanciones servicioCanciones;
 
+
+    public ControladorCanciones(ServicioCanciones servicioCanciones, 
+                                ServicioArtistas servicioArtistas) {
+        this.servicioCanciones = servicioCanciones;
+        this.servicioArtistas = servicioArtistas;
+    }
     @GetMapping()
     public String desplegarCanciones(Model model) {
         List<Cancion> canciones = servicioCanciones.obtenerTodasLasCanciones();
@@ -44,41 +52,69 @@ public class ControladorCanciones {
     @GetMapping("formulario/agregar")
     public String mostrarFormularioNuevaCancion(Model model) {
         model.addAttribute("cancion", new Cancion());
+        List<Artista> artistas = servicioArtistas.obtenerTodosLosArtistas();
+        model.addAttribute("artistas", artistas);
         return "agregarCancion";
     }
 
     @PostMapping("procesa/agregar")
-    public String agregarCancion(@Valid @ModelAttribute Cancion cancion, BindingResult result,
-                                 Model model) {
-        try {
-            servicioCanciones.agregarCancion(cancion);
-            return "redirect:/canciones";
-        } catch (ConstraintViolationException e) {
-            model.addAttribute("error", "Error en el formato de valores");
-            model.addAttribute("cancion", cancion);
+    public String agregarCancion(@Valid @ModelAttribute Cancion cancion, 
+                                 BindingResult result, Model model, 
+                                 @RequestParam("artistaId") Long artistaId) {
+        
+        if (result.hasErrors()) {
+            List<Artista> artistas = servicioArtistas.obtenerTodosLosArtistas();
+            model.addAttribute("artistas", artistas);
             return "agregarCancion";
-        } catch (Exception e) {
-            model.addAttribute("error", e);
-            model.addAttribute("cancion", cancion);
+        } 
+        if (artistaId == null || artistaId <= 0) {
+            model.addAttribute("error", "Debe seleccionar un artista");
+            cargarArtistasEnModelo(model);
+            return "agregarCancion";
+        } 
+            
+        
+        try {
+            Artista artista = servicioArtistas.obtenerArtistaPorId(artistaId);
+        
+        if (artista == null) {
+            model.addAttribute("error", "Artista no encontrado");
+            cargarArtistasEnModelo(model);
             return "agregarCancion";
         }
-
+            cancion.setArtista(artista);
+            servicioCanciones.agregarCancion(cancion);
+            return "redirect:/canciones";
+        } catch (Exception e) {
+            model.addAttribute("error", "Error al guardar: " + e.getMessage());
+            cargarArtistasEnModelo(model);
+            model.addAttribute("cancion", cancion);
+            return "agregarCancion";
     }
+}
+private void cargarArtistasEnModelo(Model model) {
+    List<Artista> artistas = servicioArtistas.obtenerTodosLosArtistas();
+    model.addAttribute("artistas", artistas);
+}
+
+
+    
 
     @GetMapping("/vistas/actualizacion/{idCancion}")
     public String actualizacionCancion(@PathVariable Long idCancion, Model model) {
         model.addAttribute("cancion", servicioCanciones.obtenerCancionPorId(idCancion));
-        System.out.println("este es el id que llega a la vista:  " + idCancion);
-        System.out.println("este es el atributo que se enviado:  " + model.getAttribute("cancion"));
-
+        List<Artista> artistas = servicioArtistas.obtenerTodosLosArtistas();
+        model.addAttribute("artistas", artistas);
         return "actualizarCancion";
     }
 
 
     @PutMapping("/actualizacion/{idCancion}")
-    public String actualizarCancion(@ModelAttribute("cancion") Cancion cancionPorActualizar, @PathVariable Long idCancion) {
+    public String actualizarCancion(@ModelAttribute("cancion") Cancion cancionPorActualizar, @PathVariable Long idCancion, @RequestParam("artistaId") Long artistaId) {
         Cancion cancionExistente = servicioCanciones.obtenerCancionPorId(idCancion);
-
+        
+        Artista artista = servicioArtistas.obtenerArtistaPorId(artistaId);
+        cancionPorActualizar.setArtista(artista);
         cancionPorActualizar.setId(idCancion);
         cancionPorActualizar.setFechaCreacion(cancionExistente.getFechaCreacion());
         cancionPorActualizar.setFechaActualizacion(new Date());
