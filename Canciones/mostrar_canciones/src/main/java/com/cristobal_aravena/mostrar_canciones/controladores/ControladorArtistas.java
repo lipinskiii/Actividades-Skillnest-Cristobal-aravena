@@ -52,25 +52,25 @@ public class ControladorArtistas {
         return "agregarArtista";
     }
 
-    // Método para procesar el formulario de agregar/editar artista
+    
     @PostMapping("/procesa/agregar")
     public String procesarAgregarArtista(@Valid @ModelAttribute("artista") Artista artista, 
                                         BindingResult result, 
                                         Model model) {
         
-        // Validar si hay errores
+        
         if (result.hasErrors()) {
-            // Si hay errores, regresar al formulario
+            
             return "agregarArtista";
         }
         
         try {
-            // Guardar el artista en la base de datos
+            
             servicioArtistas.agregarArtista(artista);
-            return "redirect:/artistas"; // Redirigir a la lista de artistas
+            return "redirect:/artistas"; 
             
         } catch (Exception e) {
-            // En caso de error, regresar al formulario
+            
             model.addAttribute("error", "Error al guardar el artista: " + e.getMessage());
             return "agregarArtista";
         }

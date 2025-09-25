@@ -19,7 +19,7 @@ public class Artista {
     @Size(min = 2, max = 100, message = "El apellido debe tener entre 2 y 100 caracteres")
     private String apellido;
 
-    @Size(min = 10, max = 1000, message = "La biografía debe tener entre 10 y 1000 caracteres")
+    @Size(min = 10, max = 500, message = "La biografía debe tener entre 10 y 500 caracteres")
     private String biografia;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -103,4 +103,8 @@ public class Artista {
     public void setCanciones(List<Cancion> canciones) {
         this.canciones = canciones;
     }
-}
+    public String toString() 
+    {
+    return this.nombre; // o el campo que uses para el nombre
+    }
+}   
