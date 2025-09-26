@@ -103,8 +103,10 @@ public class Artista {
     public void setCanciones(List<Cancion> canciones) {
         this.canciones = canciones;
     }
-    public String toString() 
-    {
-    return this.nombre; // o el campo que uses para el nombre
+    
+    
+    public String toString(){
+    
+        return this.nombre; // o el campo que uses para el nombre
     }
 }   

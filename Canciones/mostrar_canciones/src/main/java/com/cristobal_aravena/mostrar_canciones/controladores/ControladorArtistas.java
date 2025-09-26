@@ -55,8 +55,8 @@ public class ControladorArtistas {
     
     @PostMapping("/procesa/agregar")
     public String procesarAgregarArtista(@Valid @ModelAttribute("artista") Artista artista, 
-                                        BindingResult result, 
-                                        Model model) {
+                                         
+                                         Model model, BindingResult result ) {
         
         
         if (result.hasErrors()) {
