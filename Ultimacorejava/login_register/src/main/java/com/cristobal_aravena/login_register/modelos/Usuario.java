@@ -44,7 +44,7 @@ import java.time.LocalDateTime;
 
 
         @Transient
-        @Pattern(regexp="^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{8,}$", message="Tu contraseña debe tener una mayúscula, una minúscula y un número.")
+        @Pattern(regexp="^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{8,}$", message="Tu contraseña debe tener una mayúscula, una minúscula, un número y mínimo 8 caracteres.")
         private String contrasenia;
 
         @Transient

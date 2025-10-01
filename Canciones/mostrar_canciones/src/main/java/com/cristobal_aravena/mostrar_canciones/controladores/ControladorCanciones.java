@@ -110,9 +110,11 @@ private void cargarArtistasEnModelo(Model model) {
 
 
     @PutMapping("/actualizacion/{idCancion}")
-    public String actualizarCancion(@ModelAttribute("cancion") Cancion cancionPorActualizar, @PathVariable Long idCancion, @RequestParam("artistaId") Long artistaId) {
+    public String actualizarCancion(@Valid @ModelAttribute("cancion") Cancion cancionPorActualizar, BindingResult br, @PathVariable Long idCancion, @RequestParam("artistaId") Long artistaId) {
         Cancion cancionExistente = servicioCanciones.obtenerCancionPorId(idCancion);
-        
+        if (br.hasErrors()) {
+            return "actualizarCancion";
+        }
         Artista artista = servicioArtistas.obtenerArtistaPorId(artistaId);
         cancionPorActualizar.setArtista(artista);
         cancionPorActualizar.setId(idCancion);
@@ -122,6 +124,7 @@ private void cargarArtistasEnModelo(Model model) {
 
         System.out.println("este es el objeto de salida" + cancionActualizada);
         return "redirect:/canciones";
+        
     }
     @DeleteMapping("/eliminar/{idCancion}")
     public String eliminarCancion(@PathVariable Long idCancion) {
