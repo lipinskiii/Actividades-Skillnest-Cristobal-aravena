@@ -116,5 +116,10 @@ public class Cancion {
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
+
+    public boolean hasErrors() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'hasErrors'");
+    }
     
 }
