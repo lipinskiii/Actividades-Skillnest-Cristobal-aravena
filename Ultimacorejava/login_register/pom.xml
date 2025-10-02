@@ -11,6 +11,7 @@
 	<groupId>com.cristobal_aravena</groupId>
 	<artifactId>login_register</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>login_register</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
