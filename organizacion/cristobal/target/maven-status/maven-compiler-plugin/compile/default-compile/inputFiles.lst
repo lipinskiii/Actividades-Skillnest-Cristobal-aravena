@@ -1,1 +1,14 @@
 C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\App.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\config\DatabaseConfig.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\core\AppException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\core\DatabaseException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\core\Navigation.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\core\NavigationException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\home\HomeController.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\exception\TaskDataException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\exception\TaskException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\exception\TaskValidationException.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\Task.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\TaskListController.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\TaskRepository.java
+C:\Users\Crisa\Documents\Tareas forge skillnett\Primera actividad skillnest Formulario de registro\organizacion\cristobal\src\main\java\com\organization\features\tasks\TaskService.java

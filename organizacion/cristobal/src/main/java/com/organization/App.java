@@ -9,9 +9,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        DatabaseConfig.initialize();
         Navigation.setStage(stage);
-        Navigation.goTo("/views/tasks/list.fxml");
+        Navigation.goTo("/views/home/home.fxml");
     }
 
     public static void main(String[] args) {

@@ -2,29 +2,15 @@ package com.organization.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.SQLException;
 
 public class DatabaseConfig {
 
-    private static final String URL = "jdbc:sqlite:src/main/resources/app.db";
+    private static final String URL = "jdbc:mysql://localhost:3306/organizador?useSSL=false&serverTimezone=UTC";
+    private static final String USER = "root";
+    private static final String PASSWORD = "tu_password";
 
-    public static void initialize() {
-        try {
-            Connection conn = DriverManager.getConnection(URL);
-            Statement stmt = conn.createStatement();
-            stmt.execute("PRAGMA foreign_keys = ON");
-            stmt.close();
-            conn.close();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static Connection getConnection() {
-        try {
-            return DriverManager.getConnection(URL);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }

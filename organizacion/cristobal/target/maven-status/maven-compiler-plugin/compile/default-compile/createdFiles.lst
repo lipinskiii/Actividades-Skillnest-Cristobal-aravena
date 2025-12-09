@@ -1,1 +1,14 @@
+com\organization\features\tasks\Task.class
+com\organization\core\Navigation.class
+com\organization\features\home\HomeController.class
+com\organization\features\tasks\TaskRepository.class
 com\organization\App.class
+com\organization\features\tasks\exception\TaskValidationException.class
+com\organization\features\tasks\exception\TaskDataException.class
+com\organization\features\tasks\TaskListController.class
+com\organization\config\DatabaseConfig.class
+com\organization\features\tasks\exception\TaskException.class
+com\organization\core\NavigationException.class
+com\organization\features\tasks\TaskService.class
+com\organization\core\AppException.class
+com\organization\core\DatabaseException.class

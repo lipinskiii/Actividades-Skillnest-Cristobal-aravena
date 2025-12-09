@@ -1,4 +1,4 @@
-package com.organization.features.tasks;
+package com.organization.features.tasks.exception;
 
 import com.organization.core.AppException;
 
