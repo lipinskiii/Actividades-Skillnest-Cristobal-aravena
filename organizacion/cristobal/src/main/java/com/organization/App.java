@@ -1,19 +1,17 @@
 package com.organization;
 
+import com.organization.config.DatabaseConfig;
+import com.organization.core.Navigation;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("/views/main.fxml"));
-        Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
-        stage.setTitle("Organizer");
-        stage.show();
+    public void start(Stage stage) {
+        DatabaseConfig.initialize();
+        Navigation.setStage(stage);
+        Navigation.goTo("/views/tasks/list.fxml");
     }
 
     public static void main(String[] args) {
